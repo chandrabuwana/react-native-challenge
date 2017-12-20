@@ -1,7 +1,9 @@
 import React from 'react';
+import {Provider} from 'react-redux'
 import {  Text, View, Button } from 'react-native';
 import { StackNavigator ,NavigationActions} from 'react-navigation'
-import Home from './screens/main'
+import Navbar from './screens/Navbar'
+import store from './store/index'
 
 export default class App extends React.Component {
   constructor(){
@@ -10,7 +12,9 @@ export default class App extends React.Component {
   
   render() {
     return(
-      <Home/>
+      <Provider store={store}>
+        <Navbar/>      
+      </Provider>
     ) 
   }
 }
